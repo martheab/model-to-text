@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.exercise.studyprogramsmodel/src" modelPluginID="org.eclipse.exercise.studyprogramsmodel"
+    modelName="Studyprograms" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>studyprograms.ecore</foreignModel>
+  <genPackages prefix="Studyprograms" disposableProviderFactory="true" ecorePackage="studyprograms.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="studyprograms.ecore#//Level">
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//Level/Bachelor"/>
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//Level/Master"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="studyprograms.ecore#//AvailableSemesters">
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//AvailableSemesters/Fall"/>
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//AvailableSemesters/Spring"/>
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//AvailableSemesters/Both"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="studyprograms.ecore#//SemesterType">
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//SemesterType/Fall"/>
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//SemesterType/Spring"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="studyprograms.ecore#//Access">
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//Access/O"/>
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//Access/VA"/>
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//Access/VB"/>
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//Access/M1A"/>
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//Access/M2A"/>
+      <genEnumLiterals ecoreEnumLiteral="studyprograms.ecore#//Access/NoAccess"/>
+    </genEnums>
+    <genClasses ecoreClass="studyprograms.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Course/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Course/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Course/ects"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Course/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Course/availableSemester"/>
+    </genClasses>
+    <genClasses ecoreClass="studyprograms.ecore#//Programme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Programme/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Programme/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Programme/startYear"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Programme/duration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprograms.ecore#//Programme/specialisations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference studyprograms.ecore#//Programme/semesters"/>
+    </genClasses>
+    <genClasses ecoreClass="studyprograms.ecore#//Specialisation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Specialisation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprograms.ecore#//Specialisation/semesters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Specialisation/startSemester"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprograms.ecore#//Specialisation/specializations"/>
+    </genClasses>
+    <genClasses ecoreClass="studyprograms.ecore#//Semester">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Semester/semesterCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Semester/year"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprograms.ecore#//Semester/courseAccess"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Semester/semesterType"/>
+    </genClasses>
+    <genClasses ecoreClass="studyprograms.ecore#//CourseAccess">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//CourseAccess/Access"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference studyprograms.ecore#//CourseAccess/courses"/>
+    </genClasses>
+    <genClasses ecoreClass="studyprograms.ecore#//Department">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprograms.ecore#//Department/programmes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprograms.ecore#//Department/courses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Department/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprograms.ecore#//Department/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

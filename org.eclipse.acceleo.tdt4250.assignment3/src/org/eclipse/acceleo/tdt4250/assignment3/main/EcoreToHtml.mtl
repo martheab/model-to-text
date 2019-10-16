@@ -1,0 +1,128 @@
+[comment encoding = UTF-8 /]
+[module EcoreToHtml('platform:/plugin/org/eclipse/exercise/studyprograms', 'http://www.eclipse.org/emf/2002/Ecore')]
+
+
+[template public generateElement(department : Department)]
+[comment @main/]
+[file (department.name.concat('.html'), false, 'UTF-8')]
+<html>
+<head>
+	<title>STUDIEPROGRAM IDI</title>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+[for (programme : Programme | department.programmes)]
+	[generate(programme)/]
+[/for]
+
+
+</body>
+</html>
+[/file]
+[/template]
+
+[template public generate(programme : Programme)]
+	<h1>[programme.name/]</h1>
+	[for(semester : Semester | programme.semesters)]
+		[generate(semester)/]
+	[/for]
+	[for(specialisation : Specialisation | programme.specialisations)]
+		[generate(specialisation)/]
+	[/for]
+[/template]
+
+[template public generate(course : Course)]
+	[course.code/] [course.name/] Credits: [course.ects/], [course.level/]
+[/template]
+
+[template public generate(specialisation : Specialisation)]
+	<h2> Specialisation [specialisation.name/] </h2>
+	[for(semester : Semester | specialisation.semesters)]
+		[generate(semester)/]
+	[/for]
+	
+	[for (specialisation : Specialisation | specialisation.specializations)]
+		[generatesub(specialisation)/]
+	[/for]
+	
+
+[/template]
+
+[template public generatesub(subspecialisation : Specialisation)]
+	<h3> Subspecialisation [subspecialisation.name/] </h3>
+	[for(semester : Semester | subspecialisation.semesters)]
+		[generate(semester)/]
+	[/for]
+
+[/template]
+
+[template public generate(semester : Semester)]
+	<h4>[semester.semesterType.toString().concat(semester.year.toString())/]</h4>
+	<ul>
+		[for(courseAccess : CourseAccess |semester.courseAccess)]
+			[if (courseAccess.Access.toString().equalsIgnoreCase('O'))]
+				<li> ['Obligatory Courses: '/] </li>
+					<ul> 
+					[for(course : Course | courseAccess.courses)]
+						<li> [generate(course)/] </li>
+					[/for]
+					</ul>
+			[/if]
+		[/for]
+	</ul>
+
+	<ul>
+		[for(courseAccess : CourseAccess |semester.courseAccess)]
+			[if (courseAccess.Access.toString().equalsIgnoreCase('VA'))]
+				<li> ['Electable Courses, Collision-free '/] </li>
+					<ul> 
+					[for(course : Course | courseAccess.courses)]
+						<li> [generate(course)/] </li>
+					[/for]
+					</ul>
+			[/if]
+		[/for]
+	</ul>
+
+	<ul>
+		[for(courseAccess : CourseAccess |semester.courseAccess)]
+			[if (courseAccess.Access.toString().equalsIgnoreCase('VB'))]
+				<li> ['Electable Courses, Non-Collision-free '/] </li>
+					<ul> 
+					[for(course : Course | courseAccess.courses)]
+						<li> [generate(course)/] </li>
+					[/for]
+					</ul>
+			[/if]
+		[/for]
+	</ul>
+
+	<ul>
+		[for(courseAccess : CourseAccess |semester.courseAccess)]
+			[if (courseAccess.Access.toString().equalsIgnoreCase('M1A'))]
+				<li> ['Must Choose One:  '/] </li>
+					<ul> 
+					[for(course : Course | courseAccess.courses)]
+						<li> [generate(course)/] </li>
+					[/for]
+					</ul>
+			[/if]
+		[/for]
+	</ul>
+
+	<ul>
+		[for(courseAccess : CourseAccess |semester.courseAccess)]
+			[if (courseAccess.Access.toString().equalsIgnoreCase('M2A'))]
+				<li> ['Must Choose Two:  '/] </li>
+					<ul> 
+					[for(course : Course | courseAccess.courses)]
+						<li> [generate(course)/] </li>
+					[/for]
+					</ul>
+			[/if]
+		[/for]
+	</ul></ul>
+	</ul>
+
+[/template]

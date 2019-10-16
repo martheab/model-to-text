@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.exercise.studyprograms:Department
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:org.eclipse.exercise.studyprograms="platform:/plugin/org/eclipse/exercise/studyprograms"
+    xsi:schemaLocation="platform:/plugin/org/eclipse/exercise/studyprograms studyprograms.ecore"
+    code="IDI"
+    name="Institutt for datateknologi og informatikk">
+  <programmes
+      name="Datateknologi, Integrert Master"
+      code="MTDT"
+      startYear="2015"
+      duration="5">
+    <specialisations
+        name="Algoritmer og datamaskiner"
+        startSemester="5">
+      <semesters
+          year="2017">
+        <courseAccess
+            courses="//@courses.16 //@courses.17 //@courses.18"/>
+        <courseAccess
+            Access="VA"
+            courses="//@courses.19 //@courses.20 //@courses.21 //@courses.22 //@courses.23"/>
+      </semesters>
+      <semesters
+          year="2018"
+          semesterType="Spring">
+        <courseAccess
+            courses="//@courses.24 //@courses.25 //@courses.26 //@courses.27"/>
+      </semesters>
+      <specializations
+          name="Algoritmer og HPC"
+          startSemester="7">
+        <semesters
+            year="2018">
+          <courseAccess
+              Access="M1A"
+              courses="//@courses.28 //@courses.29"/>
+          <courseAccess
+              courses="//@courses.30"/>
+          <courseAccess
+              Access="VB"
+              courses="//@courses.31 //@courses.32 //@courses.33"/>
+        </semesters>
+        <semesters
+            year="2019"
+            semesterType="Spring">
+          <courseAccess
+              courses="//@courses.34 //@courses.42"/>
+          <courseAccess
+              Access="VA"
+              courses="//@courses.35 //@courses.36 //@courses.37 //@courses.38 //@courses.39"/>
+        </semesters>
+        <semesters
+            year="2019">
+          <courseAccess
+              courses="//@courses.43 //@courses.44"/>
+          <courseAccess
+              Access="VB"
+              courses="//@courses.31 //@courses.32 //@courses.33"/>
+        </semesters>
+        <semesters
+            year="2020"
+            semesterType="Spring">
+          <courseAccess
+              courses="//@courses.45"/>
+        </semesters>
+      </specializations>
+    </specialisations>
+    <semesters
+        year="2015">
+      <courseAccess
+          courses="//@courses.0 //@courses.1 //@courses.2 //@courses.3"/>
+    </semesters>
+    <semesters
+        year="2016"
+        semesterType="Spring">
+      <courseAccess
+          courses="//@courses.4 //@courses.5 //@courses.6 //@courses.7"/>
+    </semesters>
+    <semesters
+        year="2016">
+      <courseAccess
+          courses="//@courses.8 //@courses.9 //@courses.10 //@courses.11"/>
+    </semesters>
+    <semesters
+        year="2017"
+        semesterType="Spring">
+      <courseAccess
+          courses="//@courses.12 //@courses.13 //@courses.14 //@courses.15"/>
+    </semesters>
+  </programmes>
+  <courses code="EXPH0004"
+      name="Examen philosophicum"
+      ects="7.5"/>
+  <courses code="TDT4110"
+      name="Informasjonsteknologi, grunnkurs"
+      ects="7.5"/>
+  <courses code="TMA4100"
+      name="Matematikk 1"
+      ects="7.5"/>
+  <courses code="TMA4140"
+      name="Diskret Matematikk"
+      ects="7.5"/>
+  <courses code="TDT4100"
+      name="Objektorientert programmering"
+      availableSemester="Spring"/>
+  <courses code="TDT4112"
+      name="Programmeringslab for datateknologi"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TFE4101"
+      name="Krets og digitalteknikk"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TMA4115"
+      name="Matematikk 3"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TDT4113"
+      name="Datateknologi, programmeringsprosjekt"
+      ects="7.5"/>
+  <courses code="TDT4120"
+      name="Algoritmer og datastrukturer"
+      ects="7.5"/>
+  <courses code="TDT4160"
+      name="Datamaskiner og digitalteknikk"
+      ects="7.5"/>
+  <courses code="TMA4240"
+      name="Statistikk"
+      ects="7.5"/>
+  <courses code="TDT4140"
+      name="Programvareutvikling"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TDT4145"
+      name="Datamodellering og databasesystemer"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TDT4180"
+      name="Menneske maskin-interaksjon"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TTM4100"
+      name="Kommunikasjon - Tjenester og nett"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TDT4136"
+      name="Introduksjon til kunstig intelligens"
+      ects="7.5"/>
+  <courses code="TDT4258"
+      name="Maskinnaer programmering"
+      ects="7.5"/>
+  <courses code="TMA4135"
+      name="Matematikk 4D"
+      ects="7.5"/>
+  <courses code="IT2810"
+      name="Webutvikling "
+      ects="7.5"/>
+  <courses code="TDT4117"
+      name="Informasjonsgjenfinning"
+      ects="7.5"/>
+  <courses code="TDT4137"
+      name="Kognitive arkitekturer"
+      ects="7.5"/>
+  <courses code="TDT4165"
+      name="Programmeringsspråk"
+      ects="7.5"/>
+  <courses code="TDT4175"
+      name="Informasjonssystemer"
+      ects="7.5"/>
+  <courses code="TDT4186"
+      name="Operativssystemer"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TDT4205"
+      name="Kompilatorteknikk "
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TFY4125"
+      name="Fysikk"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TIØ4258"
+      name="Teknologiledelse"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TDT4290"
+      name="Kundestyrt prosjekt"
+      ects="15.0"
+      level="Master"/>
+  <courses code="TDT4295"
+      name="Datamaskinprosjekt"
+      ects="15.0"
+      level="Master"/>
+  <courses code="TDT4200"
+      name="Parallelle beregninger"
+      ects="7.5"
+      level="Master"/>
+  <courses code="BSOL4610"
+      name="Strategi og endring i teknologibedrifter"
+      ects="7.5"
+      level="Master"/>
+  <courses code="FI5205"
+      name="Corporate Responsibility and Ethics"
+      ects="7.5"
+      level="Master"/>
+  <courses code="GEOG3518"
+      name="Global Production Networks"
+      ects="7.5"
+      level="Master"/>
+  <courses code="TDT4125"
+      name="Algoritmekonstruksjon"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="TDT4230"
+      name="Grafikk og visualisering"
+      ects="7.5"
+      level="Master"
+      availableSemester="Spring"/>
+  <courses code="TDT4237"
+      name="Programvaresikkerhet"
+      ects="7.5"
+      level="Master"
+      availableSemester="Spring"/>
+  <courses code="TDT4260"
+      name="Datamaskinarkitektur"
+      ects="7.5"
+      level="Master"
+      availableSemester="Spring"/>
+  <courses code="TDT4265"
+      name="Datasyn og dyp laering "
+      ects="7.5"
+      level="Master"
+      availableSemester="Spring"/>
+  <courses code="TTM4135"
+      name="Anvendt kryptografi og nettverksikkerhet"
+      ects="7.5"
+      level="Master"
+      availableSemester="Spring"/>
+  <courses code="MEDT4165"
+      name="Signalbehandling i ultralyd-avbildning"
+      ects="7.5"
+      level="Master"
+      availableSemester="Spring"/>
+  <courses code="MOL4010"
+      name="Grunnleggende molekylaerbiologi"
+      ects="7.5"
+      availableSemester="Spring"/>
+  <courses code="EIT3006"
+      name="Eksperter i team"
+      ects="7.5"
+      level="Master"
+      availableSemester="Spring"/>
+  <courses code="TDT4501"
+      name="Datateknologi, fordypningsprosjekt"
+      ects="15.0"
+      level="Master"/>
+  <courses code="TDT4506"
+      name="Datateknologi, fordypningsemne"
+      ects="7.5"
+      level="Master"/>
+  <courses code="TDT4900"
+      name="Datateknologi, masteroppgave"
+      ects="30.0"
+      level="Master"
+      availableSemester="Spring"/>
+</org.eclipse.exercise.studyprograms:Department>
